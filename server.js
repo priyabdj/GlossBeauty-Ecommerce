@@ -23,8 +23,7 @@ app.use(cors({
     
     // For production, you can add specific domains here
     const allowedOrigins = [
-      'https://yourdomain.com',
-      'https://your-frontend-domain.vercel.app'
+     'https://gloss-beauty-frontend.vercel.app/'
     ];
     
     if (allowedOrigins.includes(origin)) {
