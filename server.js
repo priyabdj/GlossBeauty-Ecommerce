@@ -21,9 +21,9 @@ app.use(cors({
       return callback(null, true);
     }
     
-    // For production, you can add specific domains here
+    // For production, add your actual frontend domains here
     const allowedOrigins = [
-     'https://gloss-beauty-frontend.vercel.app/'
+      'https://gloss-beauty-frontend.vercel.app'
     ];
     
     if (allowedOrigins.includes(origin)) {
