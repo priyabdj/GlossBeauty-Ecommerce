@@ -35,6 +35,30 @@ app.use(cors({
   credentials: true,
 }));
 
+// Basic routes
+app.get("/", (req, res) => {
+  res.json({ 
+    message: "🛍️ Ecommerce Backend API", 
+    status: "running",
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      auth: "/auth",
+      login: "/auth/login",
+      register: "/auth/register", 
+      profile: "/auth/profile",
+      logout: "/auth/logout"
+    }
+  });
+});
+
+app.get("/health", (req, res) => {
+  res.json({ 
+    status: "healthy", 
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.use("/auth", authRoutes);
 
 mongoose.connect(process.env.MONGODB_URI)
