@@ -39,7 +39,7 @@ app.use(cors({
 // Basic routes
 app.get("/", (req, res) => {
   res.json({ 
-    message: "🛍️ Ecommerce Backend API", 
+    message: " Ecommerce Backend API", 
     status: "running",
     timestamp: new Date().toISOString(),
     endpoints: {

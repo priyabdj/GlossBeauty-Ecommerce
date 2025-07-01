@@ -21,8 +21,8 @@ router.post("/register", async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,           // ✅ Required for HTTPS production
-      sameSite: "None",       // ✅ Allows cross-origin cookies
+      secure: true,     
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -50,8 +50,8 @@ router.post("/login", async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,           // ✅ Required for HTTPS production
-      sameSite: "None",       // ✅ Allows cross-origin cookies  
+      secure: true,           
+      sameSite: "None", 
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
