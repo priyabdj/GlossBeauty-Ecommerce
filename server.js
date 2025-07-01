@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 dotenv.config();
 
@@ -46,7 +47,10 @@ app.get("/", (req, res) => {
       login: "/auth/login",
       register: "/auth/register", 
       profile: "/auth/profile",
-      logout: "/auth/logout"
+      logout: "/auth/logout",
+      orders: "/orders",
+      createOrder: "/orders (POST)",
+      getUserOrders: "/orders (GET)"
     }
   });
 });
@@ -60,6 +64,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/orders", orderRoutes);
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
